@@ -1,16 +1,43 @@
-# React + Vite
+# Altered State V3 — Launch Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🔗 **Live:** [fitfocusmedia.github.io/altered-v3-launch](https://fitfocusmedia.github.io/altered-v3-launch/)
 
-Currently, two official plugins are available:
+## Three New Flavours. One Altered State.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Pre-launch landing page for the Altered State V3 High Stim Pre-Workout — dropping February 9, 2026.
 
-## React Compiler
+### Flavours
+- 🦈 **Blue Gummy Shark** — Blue Raspberry (Fan Favourite)
+- 🍍 **Goldy Juice** — Pineapple Juice
+- 🌪️ **Tornado Ice Block** — Peach, Pineapple & Blueberry
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Features
+- Live countdown timer to launch
+- Interactive flavour showcase with expandable details
+- Email notification capture
+- Mobile-first responsive design
+- Framer Motion scroll animations
+- Brand-accurate dark theme with per-flavour accent colors
 
-## Expanding the ESLint configuration
+### Tech Stack
+- React 19 + Vite 7
+- TailwindCSS v4
+- Framer Motion
+- GitHub Pages
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Development
+```bash
+npm install
+npm run dev     # localhost:5192
+npm run build   # production build
+```
+
+### Deployment
+```bash
+GITHUB_PAGES=true npx vite build
+# Deploy dist/ to gh-pages branch
+```
+
+---
+
+Built by Scarlet 🌹 for [Altered Nutrition](https://www.instagram.com/altered.nutrition/) × [Fit Focus Media](https://fitfocusmedia.github.io/ffm-website/)
