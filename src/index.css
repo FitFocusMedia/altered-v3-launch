@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@theme {
+  --color-shark: #00CFFF;
+  --color-shark-dark: #0099CC;
+  --color-shark-glow: #00E5FF;
+  --color-goldy: #F59E0B;
+  --color-goldy-dark: #D97706;
+  --color-goldy-glow: #FBBF24;
+  --color-tornado: #EF4444;
+  --color-tornado-dark: #DC2626;
+  --color-tornado-glow: #F87171;
+  --color-altered-black: #0A0A0A;
+  --color-altered-dark: #111111;
+  --color-altered-gray: #1A1A1A;
+  --color-altered-text: #7A8A8A;
+}
+
+@font-face {
+  font-family: 'AlterFont';
+  src: local('Industry'), local('Bebas Neue'), local('Impact');
+  font-weight: 900;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0A0A0A;
+  color: white;
+  font-family: system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0A0A;
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 3px;
+}
+
+/* Glow effects */
+.glow-shark { text-shadow: 0 0 20px rgba(0, 207, 255, 0.5), 0 0 40px rgba(0, 207, 255, 0.2); }
+.glow-goldy { text-shadow: 0 0 20px rgba(245, 158, 11, 0.5), 0 0 40px rgba(245, 158, 11, 0.2); }
+.glow-tornado { text-shadow: 0 0 20px rgba(239, 68, 68, 0.5), 0 0 40px rgba(239, 68, 68, 0.2); }
+
+.box-glow-shark { box-shadow: 0 0 30px rgba(0, 207, 255, 0.15), 0 0 60px rgba(0, 207, 255, 0.05); }
+.box-glow-goldy { box-shadow: 0 0 30px rgba(245, 158, 11, 0.15), 0 0 60px rgba(245, 158, 11, 0.05); }
+.box-glow-tornado { box-shadow: 0 0 30px rgba(239, 68, 68, 0.15), 0 0 60px rgba(239, 68, 68, 0.05); }
+
+/* Particle animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.8); opacity: 0.5; }
+  50% { transform: scale(1.2); opacity: 0; }
+  100% { transform: scale(0.8); opacity: 0.5; }
+}
+
+.animate-float {
+  animation: float linear infinite;
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 2s ease-in-out infinite;
+}
