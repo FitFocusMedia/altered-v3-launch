@@ -151,7 +151,7 @@ export default function FlavourShowcase({ activeFlavour, setActiveFlavour }) {
           className="text-center mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "0px 0px -50px 0px" }}
         >
           <p className="text-altered-text text-xs tracking-[0.3em] mb-4">THREE NEW WAYS TO</p>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight">
@@ -171,7 +171,7 @@ export default function FlavourShowcase({ activeFlavour, setActiveFlavour }) {
               key={flavour.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "0px 0px -50px 0px" }}
               transition={{ delay: i * 0.15 }}
             >
               <FlavourCard
@@ -190,7 +190,7 @@ export default function FlavourShowcase({ activeFlavour, setActiveFlavour }) {
           className="text-center text-altered-text/50 text-xs mt-6 tracking-[0.1em]"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "0px 0px -50px 0px" }}
           transition={{ delay: 0.6 }}
         >
           TAP A FLAVOUR TO EXPLORE

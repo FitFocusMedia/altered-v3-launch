@@ -49,7 +49,7 @@ export default function Countdown() {
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "0px 0px -50px 0px" }}
           className="text-4xl sm:text-6xl font-black text-white glow-shark"
         >
           IT'S HERE.
@@ -65,7 +65,7 @@ export default function Countdown() {
           className="text-altered-text text-xs tracking-[0.3em] mb-8"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "0px 0px -50px 0px" }}
         >
           THE DROP
         </motion.p>
@@ -74,7 +74,7 @@ export default function Countdown() {
           className="flex items-center justify-center gap-3 sm:gap-4 md:gap-6"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "0px 0px -50px 0px" }}
           transition={{ duration: 0.6 }}
         >
           <CountdownUnit value={time.days} label="DAYS" color="text-shark" />
@@ -90,7 +90,7 @@ export default function Countdown() {
           className="text-white/60 text-sm mt-8"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "0px 0px -50px 0px" }}
           transition={{ delay: 0.3 }}
         >
           February 9, 2026 — 9:00 AM AEST

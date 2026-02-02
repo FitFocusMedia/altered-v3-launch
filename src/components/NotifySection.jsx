@@ -35,7 +35,7 @@ export default function NotifySection() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "0px 0px -50px 0px" }}
         >
           <p className="text-altered-text text-xs tracking-[0.3em] mb-4">DON'T MISS THE DROP</p>
           <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight mb-4">
@@ -68,7 +68,7 @@ export default function NotifySection() {
               className="relative"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "0px 0px -50px 0px" }}
               transition={{ delay: 0.2 }}
             >
               <div className="flex flex-col sm:flex-row gap-3">
