@@ -46,7 +46,7 @@ export default function Features() {
           className="text-center mb-12 sm:mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "0px 0px -50px 0px" }}
         >
           <p className="text-altered-text text-xs tracking-[0.3em] mb-4">ENGINEERED FOR</p>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight">
@@ -62,7 +62,7 @@ export default function Features() {
               className="group relative p-6 sm:p-8 border border-white/5 bg-altered-dark hover:border-white/10 transition-all duration-300"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "0px 0px -50px 0px" }}
               transition={{ delay: i * 0.1 }}
             >
               {/* Hover gradient */}
@@ -97,7 +97,7 @@ export default function Features() {
           className="grid grid-cols-2 sm:grid-cols-4 gap-4 border border-white/5 bg-altered-dark p-6 sm:p-8"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "0px 0px -50px 0px" }}
         >
           {stats.map((stat, i) => (
             <div key={stat.label} className="text-center">
