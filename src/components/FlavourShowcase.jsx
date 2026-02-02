@@ -56,11 +56,15 @@ function FlavourCard({ flavour, isActive, onClick }) {
       transition={{ type: 'spring', stiffness: 300, damping: 30 }}
     >
       {/* Card */}
-      <div className={`relative overflow-hidden border transition-all duration-500 ${
-        isActive 
-          ? `border-[${flavour.color}]/30 box-glow-${flavour.colorClass}` 
-          : 'border-white/5 hover:border-white/10'
-      } bg-altered-dark`}>
+      <div 
+        className={`relative overflow-hidden border transition-all duration-500 bg-altered-dark ${
+          isActive ? 'border-white/20' : 'border-white/5 hover:border-white/10'
+        }`}
+        style={isActive ? { 
+          borderColor: `${flavour.color}40`,
+          boxShadow: `0 0 30px ${flavour.color}15, 0 0 60px ${flavour.color}05`
+        } : {}}
+      >
         
         {/* Badge */}
         <div className="absolute top-3 right-3 z-10">

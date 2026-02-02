@@ -1,28 +1,39 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { subscribeEmail } from '../lib/supabase'
 
 export default function NotifySection() {
   const [email, setEmail] = useState('')
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     setError('')
 
-    if (!email || !email.includes('@')) {
+    if (!email || !email.includes('@') || !email.includes('.')) {
       setError('Please enter a valid email address')
       return
     }
 
-    // For now, store in localStorage until Supabase is connected
+    setLoading(true)
     try {
-      const subscribers = JSON.parse(localStorage.getItem('v3-subscribers') || '[]')
-      subscribers.push({ email, timestamp: new Date().toISOString() })
-      localStorage.setItem('v3-subscribers', JSON.stringify(subscribers))
+      await subscribeEmail(email.trim().toLowerCase())
       setSubmitted(true)
-    } catch {
-      setError('Something went wrong. Try again.')
+    } catch (err) {
+      console.error('Subscribe error:', err)
+      // Fallback to localStorage if Supabase fails
+      try {
+        const subscribers = JSON.parse(localStorage.getItem('v3-subscribers') || '[]')
+        subscribers.push({ email: email.trim().toLowerCase(), timestamp: new Date().toISOString() })
+        localStorage.setItem('v3-subscribers', JSON.stringify(subscribers))
+        setSubmitted(true)
+      } catch {
+        setError('Something went wrong. Try again.')
+      }
+    } finally {
+      setLoading(false)
     }
   }
 
@@ -77,15 +88,17 @@ export default function NotifySection() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="YOUR EMAIL"
-                  className="flex-1 px-4 py-3 bg-white/[0.03] border border-white/10 text-white text-sm tracking-[0.05em] placeholder:text-altered-text/50 focus:outline-none focus:border-shark/50 transition-colors"
+                  disabled={loading}
+                  className="flex-1 px-4 py-3 bg-white/[0.03] border border-white/10 text-white text-sm tracking-[0.05em] placeholder:text-altered-text/50 focus:outline-none focus:border-shark/50 transition-colors disabled:opacity-50"
                 />
                 <motion.button
                   type="submit"
-                  className="px-8 py-3 bg-white text-black font-bold text-sm tracking-[0.1em] hover:bg-white/90 transition-all"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
+                  disabled={loading}
+                  className="px-8 py-3 bg-white text-black font-bold text-sm tracking-[0.1em] hover:bg-white/90 transition-all disabled:opacity-50"
+                  whileHover={{ scale: loading ? 1 : 1.02 }}
+                  whileTap={{ scale: loading ? 1 : 0.98 }}
                 >
-                  NOTIFY ME
+                  {loading ? 'SAVING...' : 'NOTIFY ME'}
                 </motion.button>
               </div>
 
